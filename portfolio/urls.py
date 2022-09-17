@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from jobs import views
+import jobs.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('madjid', views.my_space, name='my-space')
+    path('', jobs.views.madjid, name='madjid')
 ]
