@@ -7,7 +7,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Resume - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico' %}" />
+        <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -223,18 +223,14 @@
                     <h2 class="mb-5">PORTFOLIO</h2>
                     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 <div class="row">
+                {% for job in jobs.all %}
                 <div class="col-lg-4 col-md-6">
-                        <h4>App 1</h4>
-                        <p>App</p>
-                        <img src="{% static 'assets/img/image1.jpeg' %}" class="img-fluid" alt=""/>
+                        <h4>{{job.summary}}</h4>
+                        <p>{{job.summary}}</p>
+                        <img src="{{job.image.url}}" class="img-fluid" alt=""/>
 
                 </div>
-                <div class="col-lg-4 col-md-6">
-                        <h4>App 1</h4>
-                        <p>App</p>
-                        <img src="{% static 'assets/img/image3.jpg' %}" class="img-fluid" alt=""/>
-
-                </div>
+                {% endfor %}
             </div>
                 </div>
             </section>
