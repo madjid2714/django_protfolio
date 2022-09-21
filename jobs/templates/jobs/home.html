@@ -224,12 +224,14 @@
                     <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 <div class="row">
                 {% for job in jobs.all %}
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-3 col-md-6">
+                        <a href="{% url 'detail' job.id %}">
                         <h4>{{job.summary}}</h4>
-                        <p>{{job.summary}}</p>
-                        <img src="{{job.image.url}}" class="img-fluid" alt=""/>
-
+<!--                         <p>{{job.summary}}</p>
+ -->                        <img src="{{job.image.url}}" class="img-fluid" alt=""/>
+                        </a>
                 </div>
+
                 {% endfor %}
             </div>
                 </div>
